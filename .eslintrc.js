@@ -6,6 +6,7 @@ module.exports = {
     sourceType: "module",
     ecmaFeatures: { jsx: true },
   },
+  settings: { react: { version: "detect" } },
   env: { es2021: true, browser: true, jest: true, node: true },
   plugins: ["import", "simple-import-sort"],
   extends: [
