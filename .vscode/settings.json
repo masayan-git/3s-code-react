@@ -3,5 +3,6 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"]
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+  "stylelint.enable": true
 }
