@@ -1,0 +1,69 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $base-font-family;
+  font-weight: $regular;
+  background-color: $white;
+  font-display: swap;
+
+  &:has(.coursesShow, .articleLayout) {
+    background-color: $off-white;
+  }
+
+  &:has(.top) {
+    // topの背景
+    background-image: url('../images/top-background.webp');
+    background-repeat: repeat;
+    background-color: $off-white;
+  }
+
+  &:has(#photo-modal.active) {
+    overflow: hidden;
+  }
+}
+
+input::placeholder {
+  font-family: $base-font-family;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 16px;
+  font-weight: $regular;
+  color: $black;
+  line-height: 2;
+
+  @include mq('max', 'md') {
+    font-size: 14px;
+  }
+}
+
+button {
+  border: none;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+label {
+  line-height: 1.5;
+}

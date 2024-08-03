@@ -1,0 +1,77 @@
+@use './variables' as *;
+@use './functions' as *;
+@use 'sass:map';
+
+// メディアクエリ
+@mixin mq($width, $breakpoint: '', $leftOpen: true) {
+  $_viewport: if($breakpoint != '', map.get($breakpoints, $breakpoint), 0);
+  $_decimalPoint: 0.02;
+
+  @if $width == 'min' {
+    @media screen and (min-width: #{$_viewport + if($leftOpen, $_decimalPoint, 0)}) {
+      @content;
+    }
+  }
+
+  @if $width == 'max' {
+    @media screen and (max-width: #{$_viewport - if($leftOpen, 0, $_decimalPoint)}) {
+      @content;
+    }
+  }
+}
+
+// テキストの行数を制御
+@mixin ellipsis($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+// innerスタイルのカスタマイズ
+@mixin inner-style($width: $inner-width, $padding-pc: $padding-pc, $padding-sp: $padding-sp) {
+  width: 100%;
+  max-width: $width + strip-unit($padding-pc) * 2;
+  padding-right: $padding-pc;
+  padding-left: $padding-pc;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq('max', 'md') {
+    max-width: 100%;
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
+}
+
+@mixin link-hover-action-opacity() {
+  opacity: 1;
+  transition: opacity 0.3s;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+// hoverしたら画像を拡大させる
+@mixin hover-enlarge-image($image-container) {
+  #{$image-container} {
+    overflow: hidden;
+
+    img {
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      #{$image-container} {
+        img {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+}
