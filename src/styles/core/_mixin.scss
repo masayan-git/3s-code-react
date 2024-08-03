@@ -1,19 +1,19 @@
-@use './variables' as *;
-@use './functions' as *;
-@use 'sass:map';
+@use "./variables" as *;
+@use "./functions" as *;
+@use "sass:map";
 
 // メディアクエリ
-@mixin mq($width, $breakpoint: '', $leftOpen: true) {
-  $_viewport: if($breakpoint != '', map.get($breakpoints, $breakpoint), 0);
+@mixin mq($width, $breakpoint: "", $leftOpen: true) {
+  $_viewport: if($breakpoint != "", map.get($breakpoints, $breakpoint), 0);
   $_decimalPoint: 0.02;
 
-  @if $width == 'min' {
+  @if $width == "min" {
     @media screen and (min-width: #{$_viewport + if($leftOpen, $_decimalPoint, 0)}) {
       @content;
     }
   }
 
-  @if $width == 'max' {
+  @if $width == "max" {
     @media screen and (max-width: #{$_viewport - if($leftOpen, 0, $_decimalPoint)}) {
       @content;
     }
@@ -29,7 +29,11 @@
 }
 
 // innerスタイルのカスタマイズ
-@mixin inner-style($width: $inner-width, $padding-pc: $padding-pc, $padding-sp: $padding-sp) {
+@mixin inner-style(
+  $width: $inner-width,
+  $padding-pc: $padding-pc,
+  $padding-sp: $padding-sp
+) {
   width: 100%;
   max-width: $width + strip-unit($padding-pc) * 2;
   padding-right: $padding-pc;
@@ -37,7 +41,7 @@
   margin-right: auto;
   margin-left: auto;
 
-  @include mq('max', 'md') {
+  @include mq("max", "md") {
     max-width: 100%;
     padding-right: $padding-sp;
     padding-left: $padding-sp;

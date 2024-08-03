@@ -1,8 +1,10 @@
-@use 'sass:math';
+@use "sass:math";
+@use "sass:color";
+@use "sass:meta";
 
 // 数値を取り出す
 @function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
+  @if meta.type-of($number) == "number" and not math.unitless($number) {
     @return math.div($number, $number * 0 + 1);
   }
 
@@ -11,11 +13,19 @@
 
 // カラーコードからrgbaを出力
 @function rgba-color($color, $alpha: 1) {
-  @return rgba(red($color), green($color), blue($color), $alpha);
+  @return rgba(
+    color.red($color),
+    color.green($color),
+    color.blue($color),
+    $alpha
+  );
 }
 
 @function rem-clamp($min, $max, $minViewport: 375, $maxViewport: 1440) {
-  $vwScale: math.div(($max - $min), ($maxViewport - $minViewport)); // vw単位でのスケールを計算
+  $vwScale: math.div(
+    ($max - $min),
+    ($maxViewport - $minViewport)
+  ); // vw単位でのスケールを計算
   $baseOffset: $min - $minViewport * $vwScale; // 基準となる最小値からのオフセットを計算
 
   $minRem: math.div($min, 16); // 最小値をremに変換
@@ -23,7 +33,11 @@
   $baseOffsetRem: math.div($baseOffset, 16); // オフセットをremに変換
   $vwScaleRem: $vwScale * 100; // vwスケールを調整
 
-  @return clamp(#{$minRem}rem, #{$baseOffsetRem}rem + #{$vwScaleRem}vw, #{$maxRem}rem);
+  @return clamp(
+    #{$minRem}rem,
+    #{$baseOffsetRem}rem + #{$vwScaleRem}vw,
+    #{$maxRem}rem
+  );
 }
 
 // 使用例

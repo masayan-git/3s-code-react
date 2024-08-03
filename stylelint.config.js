@@ -6,4 +6,8 @@ module.exports = {
     "stylelint-config-recommended-scss",
   ],
   plugins: ["stylelint-scss"],
+  rules: {
+    "font-family-name-quotes": null,
+    "selector-class-pattern": null,
+  },
 };
