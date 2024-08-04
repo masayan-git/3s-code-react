@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
-export default function Document() {
+const Document = () => {
   const faviconPath = "favicon";
   return (
     <Html lang="ja">
@@ -31,4 +31,6 @@ export default function Document() {
       </body>
     </Html>
   );
-}
+};
+
+export default Document;
