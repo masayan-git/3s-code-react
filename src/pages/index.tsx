@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <main>
+    <main className="u-inner">
       <p>test</p>
     </main>
   );
