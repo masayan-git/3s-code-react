@@ -1,3 +1,4 @@
+import MainView from "@/components/top/mainView";
 import MainLayout from "@/layouts/main";
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
       page="大阪のWeb制作フリーランス"
       description="あなたの想いをWebに表現します。"
     >
-      <div>コンテンツです</div>
+      <MainView />
     </MainLayout>
   );
 };

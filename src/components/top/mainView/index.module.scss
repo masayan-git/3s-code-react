@@ -1,0 +1,28 @@
+@use "../../../styles/core/variables" as *;
+@use "../../../styles/core/mixin" as *;
+
+.mainView {
+  width: 100vw;
+  height: 900px;
+  background: linear-gradient(122deg, $secondary-light, #f5fdff);
+
+  .mainView__inner {
+  }
+  .mainView__contents {
+  }
+  .mainView__copy {
+  }
+  .mainView__title {
+    color: red;
+  }
+  .mainView__copyText {
+  }
+  .mainView__image {
+  }
+
+  .test {
+    &.test--test {
+      color: red;
+    }
+  }
+}

@@ -4,5 +4,15 @@
     "strings": true
   },
   "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-  "stylelint.enable": true
+  "stylelint.enable": true,
+  "emmet.syntaxProfiles": {
+    "jsx": {
+      "markup.attributes": {
+        "class*": "className"
+      },
+      "markup.valuePrefix": {
+        "class*": "styles"
+      }
+    }
+  }
 }
