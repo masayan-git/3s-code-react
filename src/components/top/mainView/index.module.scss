@@ -5,24 +5,26 @@
   width: 100vw;
   height: 900px;
   background: linear-gradient(122deg, $secondary-light, #f5fdff);
+}
 
-  .mainView__inner {
-  }
-  .mainView__contents {
-  }
-  .mainView__copy {
-  }
-  .mainView__title {
-    color: red;
-  }
-  .mainView__copyText {
-  }
-  .mainView__image {
-  }
+.inner {
+  width: $inner-width;
+  margin: 0 auto;
+  padding: $padding-pc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .test {
-    &.test--test {
-      color: red;
-    }
-  }
+.contents {
+}
+
+.copy {
+}
+.title {
+  color: red;
+}
+.copyText {
+}
+.image {
 }
