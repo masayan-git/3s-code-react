@@ -10,6 +10,7 @@ $neutral-light: #f7f6f6;
 // font weight
 $regular: 400;
 $medium: 500;
+$semi-bold: 600;
 $bold: 700;
 
 // spacing
@@ -20,9 +21,9 @@ $padding-pc: 30px;
 $inner-width: 1216px;
 
 // font
-$base-font-family: "Noto Serif JP", "游明朝", "Yu Mincho",
-  "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "Hiragino Mincho ProN", "HG明朝E",
-  "ＭＳ Ｐ明朝", "MS PMincho", "ＭＳ 明朝", serif;
+$base-font-family: var(--font-noto-sans-jp), sans-serif;
+$en-title-font-family: var(--font-montserrat), sans-serif;
+$en-font-family: var(--font-poppins), sans-serif;
 
 // break points
 $breakpoints: (
