@@ -1,0 +1,60 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+
+.header {
+  width: 100%;
+  max-width: 1200px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-inline: rem-clamp(20, 30, 769, 1440);
+  z-index: $z-index-100;
+
+  @include mq("max", "md") {
+    padding-inline: $padding-sp;
+  }
+}
+
+.inner {
+  padding: 20px rem-clamp(30, 50, 769, 1440);
+  box-shadow: 0 5px 25px #1b6c871a;
+  background-color: white;
+  border-radius: 37px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleLink {
+  font-family: $en-font-family;
+  font-weight: $bold;
+  font-size: 25px;
+  line-height: 1;
+
+  @include link-hover-action-opacity();
+}
+
+.navLists {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.navLink {
+  color: $primary;
+  font-size: 14px;
+  font-weight: $bold;
+  line-height: 1;
+  padding-block: 6px;
+
+  @include link-hover-action-opacity();
+
+  &[data-contact-button] {
+    color: white;
+    background-color: $primary;
+    padding: 6px 18px;
+    border-radius: 18px;
+  }
+}

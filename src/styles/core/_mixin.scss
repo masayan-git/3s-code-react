@@ -59,6 +59,16 @@
   }
 }
 
+@mixin button-hover-action-generic() {
+  transition: filter 0.3s;
+
+  @media (hover: hover) {
+    &:hover {
+      filter: brightness(95%);
+    }
+  }
+}
+
 // hoverしたら画像を拡大させる
 @mixin hover-enlarge-image($image-container) {
   #{$image-container} {
