@@ -1,22 +1,156 @@
 @use "../../../styles/core/variables" as *;
 @use "../../../styles/core/mixin" as *;
+@use "../../../styles/core/functions" as *;
 
-.mainView {
+.MainView {
   width: 100vw;
-  height: 900px;
+  height: rem-clamp(650, 900);
   background: linear-gradient(122deg, $secondary-light, #f5fdff);
+  padding-inline: $padding-pc;
+  position: relative;
+  overflow: hidden;
+
+  @include mq("max", "md") {
+    padding-inline: $padding-sp;
+    padding-bottom: $padding-sp;
+  }
+}
+
+.arrowTopLeft {
+  width: 480px;
+  aspect-ratio: 480 / 532;
+  background-image: url("/top/mv/mv-arrow-left.webp");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: calc(50% + 388px);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.arrowTopRight {
+  width: 480px;
+  aspect-ratio: 480 / 532;
+  background-image: url("/top/mv/mv-arrow-left.webp");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translate(174%, -50%);
+  position: absolute;
+  top: 0;
+  right: 50%;
+
+  @include mq("max", "md") {
+    width: 256px;
+    right: -50px;
+    transform: translateY(-50%);
+  }
+}
+
+.arrowBottomLeft {
+  width: 480px;
+  aspect-ratio: 480 / 532;
+  background-image: url("/top/mv/mv-arrow-right.webp");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  right: calc(50% + 376px);
+  transform: translateY(50%);
+
+  @include mq("max", "md") {
+    display: none;
+  }
 }
 
 .inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @include mq("max", "md") {
+    align-items: end;
+  }
 }
+
 .contents {
+  width: 100%;
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: max-content minmax(335px, 500px);
+  column-gap: 24px;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  z-index: $z-index-min;
+
+  @include mq("max", "md") {
+    max-width: unset;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
 }
+
 .copy {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  @include mq("max", "md") {
+    row-gap: 16px;
+  }
 }
-.title {
-  color: red;
-}
+
 .copyText {
+  font-size: rem-clamp(14, 16px);
 }
+
+.title {
+  font-size: rem-clamp(35, 48);
+  font-weight: $bold;
+  letter-spacing: 0.002em;
+  line-height: 1.75;
+
+  @include mq("max", "sp") {
+    font-size: rem-clamp(28, 35, 320, 375);
+  }
+}
+
+.titleInner {
+  display: inline-flex;
+  flex-direction: column;
+
+  @include mq("max", "md") {
+    display: inline;
+  }
+}
+
+.titleTextBlock {
+  display: inline-block;
+}
+
 .image {
+  aspect-ratio: 500 / 532;
+  width: 100%;
+
+  @include mq("max", "md") {
+    aspect-ratio: 256/ 260;
+    width: 335px;
+    padding-inline: 20px;
+  }
+
+  @include mq("max", "sp") {
+    width: 270px;
+  }
+
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
 }
