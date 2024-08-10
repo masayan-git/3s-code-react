@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { FC } from "react";
+import { type FC, useState } from "react";
 
 import styles from "./index.module.scss";
 
@@ -31,10 +31,21 @@ const navItems = [
 ];
 
 const Header: FC = () => {
+  const [active, setActive] = useState(false);
+
+  const handleMenuOpen = () => {
+    setActive(!active);
+  };
+
   return (
-    <header className={styles.header}>
+    <header data-active={active || undefined} className={styles.header}>
+      <button onClick={handleMenuOpen} className={styles.button}>
+        <span className={styles.buttonLine}></span>
+        <span className={styles.buttonLine}></span>
+        <span className={styles.buttonLine}></span>
+      </button>
       <div className={styles.inner}>
-        <h1>
+        <h1 className={styles.title}>
           <Link href="/" className={styles.titleLink}>
             3S code
           </Link>
