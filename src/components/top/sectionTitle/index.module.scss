@@ -25,6 +25,10 @@
   @include mq("max", "md") {
     padding-bottom: 24px;
   }
+
+  @include mq("max", "sp") {
+    font-size: rem-clamp(60, 65, 320, 375);
+  }
 }
 
 .titleJa {
