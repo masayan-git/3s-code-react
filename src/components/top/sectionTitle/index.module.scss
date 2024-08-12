@@ -5,6 +5,12 @@
 .sectionTitle {
   position: relative;
   width: fit-content;
+
+  &[data-theme-light] {
+    .titleEn {
+      color: #fafeff;
+    }
+  }
 }
 
 .titleEn {
@@ -18,6 +24,10 @@
 
   @include mq("max", "md") {
     padding-bottom: 24px;
+  }
+
+  @include mq("max", "sp") {
+    font-size: rem-clamp(60, 65, 320, 375);
   }
 }
 

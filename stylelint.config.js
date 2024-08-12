@@ -9,5 +9,6 @@ module.exports = {
   rules: {
     "font-family-name-quotes": null,
     "selector-class-pattern": null,
+    "no-descending-specificity": null,
   },
 };
