@@ -1,0 +1,40 @@
+@use "../../../styles/core/variables" as *;
+@use "../../../styles/core/mixin" as *;
+
+.sectionTitle {
+  position: relative;
+  width: fit-content;
+}
+
+.titleEn {
+  font-size: 180px;
+  letter-spacing: 0.007em;
+  font-weight: $semi-bold;
+  font-family: $en-title-font-family;
+  color: #e3f4f9b3;
+  display: inline-block;
+  line-height: 1;
+}
+
+.titleJa {
+  font-size: 13px;
+  font-weight: $bold;
+  letter-spacing: 0.001em;
+  padding-left: 36px;
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  line-height: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: $black;
+    position: absolute;
+    transform: rotate(-60deg) translateY(-50%);
+    top: 50%;
+    left: 0;
+  }
+}
