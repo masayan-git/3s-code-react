@@ -1,5 +1,6 @@
 @use "../../../styles/core/variables" as *;
 @use "../../../styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
 
 .sectionTitle {
   position: relative;
@@ -7,7 +8,7 @@
 }
 
 .titleEn {
-  font-size: 180px;
+  font-size: rem-clamp(65, 180);
   letter-spacing: 0.007em;
   font-weight: $semi-bold;
   font-family: $en-title-font-family;
@@ -16,7 +17,6 @@
   line-height: 1;
 
   @include mq("max", "md") {
-    font-size: 65px;
     padding-bottom: 24px;
   }
 }
@@ -28,7 +28,7 @@
   padding-left: 36px;
   position: absolute;
   left: 0;
-  bottom: 50px;
+  bottom: rem-clamp(30, 50, 768, 1440);
   line-height: 1;
 
   @include mq("max", "md") {
