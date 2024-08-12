@@ -10,7 +10,13 @@
 .inner {
   background-color: white;
   padding-top: 75px;
-  margin-top: 60px;
+  padding-bottom: 120px;
+  border-bottom-left-radius: 200px;
+
+  @include mq("max", "md") {
+    padding-bottom: 80px;
+    border-bottom-left-radius: 100px;
+  }
 }
 
 .titleContainer {
