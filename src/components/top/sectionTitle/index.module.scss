@@ -5,6 +5,12 @@
 .sectionTitle {
   position: relative;
   width: fit-content;
+
+  &[data-theme-light] {
+    .titleEn {
+      color: #fafeff;
+    }
+  }
 }
 
 .titleEn {
