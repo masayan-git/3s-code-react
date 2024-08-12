@@ -2,14 +2,10 @@
 @use "../core/variables" as *;
 @use "../core/mixin" as *;
 
-.u-inner {
+@mixin u-inner() {
   @include inner-style;
 }
 
-.u-innerMedium {
-  @include inner-style(1008px);
-}
-
-.u-innerBizTop {
-  @include inner-style(1012px);
+@mixin u-innerMedium {
+  @include inner-style(1000px);
 }

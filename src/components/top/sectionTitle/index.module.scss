@@ -1,0 +1,54 @@
+@use "../../../styles/core/variables" as *;
+@use "../../../styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+
+.sectionTitle {
+  position: relative;
+  width: fit-content;
+}
+
+.titleEn {
+  font-size: rem-clamp(65, 180);
+  letter-spacing: 0.007em;
+  font-weight: $semi-bold;
+  font-family: $en-title-font-family;
+  color: #e3f4f9b3;
+  display: inline-block;
+  line-height: 1;
+
+  @include mq("max", "md") {
+    padding-bottom: 24px;
+  }
+}
+
+.titleJa {
+  font-size: 13px;
+  font-weight: $bold;
+  letter-spacing: 0.001em;
+  padding-left: 36px;
+  position: absolute;
+  left: 0;
+  bottom: rem-clamp(30, 50, 768, 1440);
+  line-height: 1;
+
+  @include mq("max", "md") {
+    padding-left: 24px;
+    bottom: 4px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: $black;
+    position: absolute;
+    transform: rotate(-60deg) translateY(-50%);
+    top: 50%;
+    left: 0;
+
+    @include mq("max", "md") {
+      width: 16px;
+    }
+  }
+}

@@ -1,0 +1,201 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.topAbout {
+  background-color: #e3f4f9b3;
+}
+
+.inner {
+  background-color: white;
+  padding-top: 75px;
+  padding-bottom: 120px;
+  border-bottom-left-radius: 200px;
+
+  @include mq("max", "md") {
+    padding-bottom: 80px;
+    border-bottom-left-radius: 100px;
+  }
+}
+
+.titleContainer {
+  @include u-innerMedium;
+}
+
+.contents {
+  margin-top: 60px;
+}
+
+.message {
+  display: grid;
+  grid-template-columns: 50% minmax(300px, 530px) 1fr;
+  grid-template-rows: auto max-content auto;
+
+  @include mq("max", "md") {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    grid-template-rows: unset;
+  }
+}
+
+.massageImageArea {
+  @include mq("min", "md") {
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+  }
+
+  @include mq("max", "md") {
+    padding-right: $padding-sp;
+  }
+}
+
+.massageImage {
+  height: rem-clamp(300, 480, 768, 1440);
+  aspect-ratio: 720 / 510;
+  width: 100%;
+  overflow: hidden;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  @include mq("max", "md") {
+    height: rem-clamp(230, 300, 375, 767);
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.messageContent {
+  @include mq("min", "md") {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    padding-left: rem-clamp(30, 60, 768, 1440);
+    padding-right: $padding-pc;
+    padding-block: 20px;
+  }
+
+  @include mq("max", "md") {
+    width: 100%;
+    padding-inline: $padding-sp;
+  }
+}
+
+.messageTitle {
+  font-size: 22px;
+  font-weight: $bold;
+  color: $primary;
+  letter-spacing: 0.002em;
+}
+
+.messageTextArea {
+  margin-top: 20px;
+  display: grid;
+  row-gap: rem-clamp(30, 40, 768, 1440);
+}
+
+.messageText {
+  font-size: 16px;
+  line-height: 2;
+}
+
+.messageSign {
+  margin-top: rem-clamp(20, 30, 768, 1440);
+  text-align: right;
+}
+
+.promise {
+  @include mq("min", "md") {
+    @include u-innerMedium;
+  }
+
+  margin-top: rem-clamp(50, 100);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: rem-clamp(30, 60, 768, 1440);
+
+  @include mq("max", "md") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.promiseContent {
+  padding-top: 20px;
+
+  @include mq("max", "md") {
+    padding-top: 30px;
+    grid-row: 2 / 3;
+    padding-inline: $padding-sp;
+    width: 100%;
+  }
+}
+
+.promiseTitle {
+  font-size: 22px;
+  font-weight: $bold;
+  color: $primary;
+}
+
+.promiseItems {
+  margin-top: 20px;
+  display: grid;
+  row-gap: 40px;
+
+  @include mq("max", "md") {
+    row-gap: 30px;
+  }
+}
+
+.promiseItemTitle {
+  display: grid;
+  row-gap: 6px;
+}
+
+.promiseItemLabel {
+  font-size: 11px;
+  font-weight: $bold;
+  color: $primary;
+  letter-spacing: 0.0005em;
+}
+
+.promiseItemTitleText {
+  font-size: 20px;
+  font-weight: $bold;
+  letter-spacing: 0.002em;
+}
+
+.promiseItemText {
+  margin-top: 20px;
+  font-size: 16px;
+
+  @include mq("max", "md") {
+    margin-top: 10px;
+  }
+}
+
+.promiseImageArea {
+  @include mq("max", "md") {
+    padding-left: $padding-sp;
+  }
+}
+
+.promiseImage {
+  aspect-ratio: 440 / 506;
+  overflow: hidden;
+  border-radius: 30px;
+
+  @include mq("max", "md") {
+    width: 100%;
+    grid-row: 1 / 2;
+    height: rem-clamp(230, 300, 375, 767);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
