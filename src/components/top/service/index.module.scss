@@ -1,0 +1,62 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.topService {
+  background-color: #e3f4f9b3;
+  padding-top: 70px;
+  padding-bottom: 120px;
+
+  @include mq("max", "md") {
+    padding-top: 65px;
+    padding-bottom: 80px;
+  }
+}
+
+.inner {
+  @include u-inner;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+
+  @include mq("max", "tablet") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  padding: rem-clamp(30, 70) rem-clamp(30, 50) rem-clamp(30, 50);
+  box-shadow: 0 5px 25px #1b6c871a;
+  border-radius: 40px;
+  background-color: $white;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  row-gap: rem-clamp(20, 30);
+}
+
+.cardTitle {
+  display: grid;
+  row-gap: 6px;
+}
+
+.cardTitleLabel {
+  font-size: 11px;
+  color: $primary;
+  font-weight: $bold;
+  letter-spacing: 0.0005em;
+}
+
+.cardTitleText {
+  font-size: rem-clamp(20, 24);
+  font-weight: $bold;
+}
+
+.cardText {
+  font-size: rem-clamp(16, 20);
+  line-height: 2;
+}

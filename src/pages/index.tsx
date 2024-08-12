@@ -1,5 +1,6 @@
 import TopAbout from "@/components/top/about";
 import MainView from "@/components/top/mainView";
+import TopService from "@/components/top/service";
 import MainLayout from "@/layouts/main";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
     >
       <MainView />
       <TopAbout />
+      <TopService />
     </MainLayout>
   );
 };
