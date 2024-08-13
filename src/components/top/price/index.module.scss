@@ -1,0 +1,81 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.topPrice {
+  background-color: $white;
+}
+
+.bgInner {
+  padding-top: rem-clamp(70, 80);
+  padding-bottom: rem-clamp(154, 200);
+  background-color: #e3f4f9b3;
+  border-top-left-radius: rem-clamp(100, 200);
+}
+
+.inner {
+  @include u-innerMedium;
+}
+
+.contents {
+  margin-top: 50px;
+}
+
+.lists {
+  padding: 20px 76px;
+  background-color: $white;
+  box-shadow: 0 5px 25px #1b6c871a;
+  border-radius: 40px;
+  display: grid;
+
+  @include mq("max", "md") {
+    padding: 10px 30px;
+    border-radius: 30px;
+  }
+}
+
+.list {
+  border-bottom: 1px dashed $secondary;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  padding-block: 20px;
+  padding-inline: 40px;
+
+  @include mq("max", "md") {
+    padding-left: 20px;
+    row-gap: 10px;
+    padding-block: 15px;
+  }
+
+  @include mq("max", "tablet") {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.content {
+  font-size: 18px;
+  font-weight: $medium;
+  line-height: 1.7;
+}
+
+.price {
+  font-size: 18px;
+}
+
+.note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: $primary;
+  text-align: right;
+
+  @include mq("max", "md") {
+    text-align: left;
+  }
+}

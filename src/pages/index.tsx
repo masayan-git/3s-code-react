@@ -2,6 +2,7 @@ import type { FC } from "react";
 
 import TopAbout from "@/components/top/about";
 import MainView from "@/components/top/mainView";
+import TopPrice from "@/components/top/price";
 import TopService from "@/components/top/service";
 import TopWorks from "@/components/top/works";
 import MainLayout from "@/layouts/main";
@@ -16,6 +17,7 @@ const Home: FC = () => {
       <TopAbout />
       <TopService />
       <TopWorks />
+      <TopPrice />
     </MainLayout>
   );
 };
