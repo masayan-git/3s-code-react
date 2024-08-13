@@ -1,0 +1,75 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.moreButton {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  padding-right: 100px;
+  position: relative;
+  font-weight: $bold;
+
+  @include mq("max", "md") {
+    font-size: 14px;
+    padding-right: 80px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    background-color: $primary;
+    position: absolute;
+    right: 35px;
+    top: 4px;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @include mq("max", "md") {
+      width: 40px;
+      right: 28px;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid $primary;
+    position: absolute;
+    right: 36px;
+    top: 4px;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: rotate(-45deg);
+
+    @include mq("max", "md") {
+      right: 30px;
+    }
+  }
+
+  span {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid $primary;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @include mq("max", "md") {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

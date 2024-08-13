@@ -1,0 +1,39 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+
+.worksCard {
+  box-shadow: 0 5px 25px #1b6c871a;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.link {
+  display: block;
+}
+
+.image {
+  aspect-ratio: 380 / 260;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.titleArea {
+  padding: 15px 30px 30px;
+  display: grid;
+  row-gap: 6px;
+  background-color: $white;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: $medium;
+}
+
+.urlText {
+  font-size: 12px;
+  color: $primary;
+}
