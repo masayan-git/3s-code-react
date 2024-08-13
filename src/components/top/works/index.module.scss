@@ -1,0 +1,37 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.topWorks {
+  background-color: #e3f4f9b3;
+}
+
+.bgInner {
+  background-color: white;
+  padding-top: 75px;
+  padding-bottom: 120px;
+  box-shadow: 0 5px 25px #1b6c871a;
+  border-top-right-radius: 200px;
+}
+
+.inner {
+  @include u-inner;
+}
+
+.cards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+
+  @include mq("max", "tablet") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.buttonArea {
+  margin-top: 70px;
+  display: flex;
+  justify-content: flex-end;
+}
