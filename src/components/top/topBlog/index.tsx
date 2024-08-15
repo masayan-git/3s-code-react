@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import MoreButton from "@/components/button/more-button";
+import MoreButton from "@/components/button/moreButton";
 import CategoryLabel from "@/components/label/categoryLabel";
 
 import SectionTitle from "../sectionTitle";

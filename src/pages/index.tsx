@@ -1,12 +1,12 @@
 import type { FC } from "react";
 
-import TopAbout from "@/components/top/about";
-import TopContact from "@/components/top/contact";
+import Cta from "@/components/top/cta";
 import MainView from "@/components/top/mainView";
-import TopPrice from "@/components/top/price";
-import TopService from "@/components/top/service";
+import TopAbout from "@/components/top/topAbout";
 import TopBlog from "@/components/top/topBlog";
-import TopWorks from "@/components/top/works";
+import TopPrice from "@/components/top/topPrice";
+import TopService from "@/components/top/topService";
+import TopWorks from "@/components/top/topWorks";
 import MainLayout from "@/layouts/main";
 
 const Home: FC = () => {
@@ -20,7 +20,7 @@ const Home: FC = () => {
       <TopService />
       <TopWorks />
       <TopPrice />
-      <TopContact />
+      <Cta />
       <TopBlog />
     </MainLayout>
   );

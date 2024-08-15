@@ -22,7 +22,7 @@ const TopAbout = () => {
     },
   ];
   return (
-    <section className={styles.topAbout}>
+    <section className={styles.container}>
       <div className={styles.inner}>
         <div className={styles.titleContainer}>
           <SectionTitle titleEn="ABOUT" titleJa="3s codeについて" />

@@ -1,8 +1,8 @@
-@use "../../../styles/core/variables" as *;
-@use "../../../styles/core/mixin" as *;
-@use "../../../styles/core/functions" as *;
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
 
-.MainView {
+.container {
   width: 100vw;
   height: rem-clamp(650, 900);
   background: linear-gradient(122deg, $secondary-light, #f5fdff);

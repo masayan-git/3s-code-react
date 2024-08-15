@@ -13,7 +13,7 @@ const Header: FC = () => {
   };
 
   return (
-    <header data-active={active || undefined} className={styles.header}>
+    <header data-active={active || undefined} className={styles.container}>
       <button onClick={handleMenuOpen} className={styles.button}>
         <span className={styles.buttonLine}></span>
         <span className={styles.buttonLine}></span>
