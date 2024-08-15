@@ -1,0 +1,67 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/utility/inner" as *;
+
+.container {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  background: linear-gradient(180deg, #559ab1, #1d6d88);
+
+  @include mq("max", "md") {
+    padding-top: 30px;
+  }
+}
+
+.inner {
+  @include u-inner;
+}
+
+.content {
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.titleLink {
+  font-size: 40px;
+  font-weight: $bold;
+
+  @include link-hover-action-opacity;
+}
+
+.navLists {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @include mq("max", "md") {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: $bold;
+  padding-block: 4px;
+
+  @include link-hover-action-opacity;
+}
+
+.copyArea {
+  padding-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+
+  @include mq("max", "md") {
+    justify-content: center;
+  }
+}
+
+.copy {
+  font-size: 12px;
+  color: $white;
+}

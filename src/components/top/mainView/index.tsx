@@ -5,7 +5,7 @@ import styles from "@/components/top/mainView/index.module.scss";
 
 const MainView: FC = () => {
   return (
-    <section className={styles.MainView}>
+    <section className={styles.container}>
       <div className={styles.arrowTopLeft} />
       <div className={styles.arrowTopRight} />
       <div className={styles.arrowBottomLeft} />

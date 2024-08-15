@@ -10,7 +10,7 @@ type Props = {
 
 const MoreButton: FC<Props> = ({ href, text }) => {
   return (
-    <Link className={styles.moreButton} href={href}>
+    <Link className={styles.container} href={href}>
       {text}
       <span></span>
     </Link>

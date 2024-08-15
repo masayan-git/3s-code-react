@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./index.module.scss";
 
-const TopContact = () => {
+const Cta = () => {
   return (
-    <section className={styles.topContact}>
+    <section className={styles.container}>
       <h2 className={styles.title}>CONTACT</h2>
       <div className={styles.contents}>
         <p className={styles.mainText}>
@@ -27,4 +27,4 @@ const TopContact = () => {
   );
 };
 
-export default TopContact;
+export default Cta;

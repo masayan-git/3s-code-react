@@ -2,7 +2,7 @@
 @use "@/styles/core/mixin" as *;
 @use "@/styles/core/functions" as *;
 
-.header {
+.container {
   position: fixed;
   z-index: $z-index-100;
 

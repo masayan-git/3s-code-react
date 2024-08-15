@@ -1,12 +1,12 @@
-import MoreButton from "@/components/button/more-button";
-import WorksCard from "@/components/works-card";
+import MoreButton from "@/components/button/moreButton";
+import WorksCard from "@/components/worksCard";
 
 import SectionTitle from "../sectionTitle";
 import styles from "./index.module.scss";
 
 const TopWorks = () => {
   return (
-    <section className={styles.topWorks}>
+    <section className={styles.container}>
       <div className={styles.bgInner}>
         <div className={styles.inner}>
           <SectionTitle titleEn="WORKS" titleJa="制作実績" />
