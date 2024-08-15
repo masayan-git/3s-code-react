@@ -1,34 +1,9 @@
 import Link from "next/link";
 import { type FC, useState } from "react";
 
-import styles from "./index.module.scss";
+import { menuData } from "@/data/menuData";
 
-const navItems = [
-  {
-    label: "3S codeについて",
-    href: "/",
-  },
-  {
-    label: "サービス",
-    href: "/",
-  },
-  {
-    label: "制作実績",
-    href: "/",
-  },
-  {
-    label: "料金",
-    href: "/",
-  },
-  {
-    label: "ブログ",
-    href: "/",
-  },
-  {
-    label: "お問い合わせ",
-    href: "/",
-  },
-];
+import styles from "./index.module.scss";
 
 const Header: FC = () => {
   const [active, setActive] = useState(false);
@@ -52,7 +27,7 @@ const Header: FC = () => {
         </h1>
         <nav>
           <ul className={styles.navLists}>
-            {navItems.map((item, index) => (
+            {menuData.map((item, index) => (
               <li key={index}>
                 <Link
                   href={item.href}
