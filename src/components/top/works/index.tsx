@@ -16,7 +16,7 @@ const TopWorks = () => {
             <WorksCard />
           </div>
           <div className={styles.buttonArea}>
-            <MoreButton />
+            <MoreButton href="/" text="実績一覧を見る" />
           </div>
         </div>
       </div>

@@ -1,0 +1,77 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.container {
+  background-color: $white;
+  padding-top: rem-clamp(60, 80);
+  padding-bottom: rem-clamp(80, 120);
+}
+
+.inner {
+  @include u-inner;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: rem-clamp(50, 80);
+
+  @include mq("max", "tablet") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px #1b6c871a;
+}
+
+.cardLink {
+  display: block;
+}
+
+.cardImage {
+  aspect-ratio: 370 / 260;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cardContent {
+  padding: 15px 24px 30px;
+  background-color: $white;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: $medium;
+  line-height: 1.7;
+
+  @include ellipsis(2);
+}
+
+.cardCategory {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cardText {
+  margin-top: 16px;
+  line-height: 2;
+
+  @include ellipsis(4);
+}
+
+.moreButton {
+  margin-top: 60px;
+  display: flex;
+  justify-content: flex-end;
+}

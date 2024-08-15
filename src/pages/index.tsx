@@ -5,6 +5,7 @@ import TopContact from "@/components/top/contact";
 import MainView from "@/components/top/mainView";
 import TopPrice from "@/components/top/price";
 import TopService from "@/components/top/service";
+import TopBlog from "@/components/top/topBlog";
 import TopWorks from "@/components/top/works";
 import MainLayout from "@/layouts/main";
 
@@ -20,6 +21,7 @@ const Home: FC = () => {
       <TopWorks />
       <TopPrice />
       <TopContact />
+      <TopBlog />
     </MainLayout>
   );
 };
