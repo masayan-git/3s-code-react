@@ -1,0 +1,55 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+
+.container {
+  padding: 30px;
+  background-color: $white;
+  border-radius: 40px;
+  box-shadow: 0 5px 25px #1b6c871a;
+  display: grid;
+  row-gap: 30px;
+}
+
+.imageArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.image {
+  aspect-ratio: 1 / 1;
+  width: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.name {
+  font-size: 20px;
+  font-weight: $medium;
+}
+
+.textArea {
+  display: grid;
+  row-gap: 20px;
+}
+
+.snsArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.snsLink {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
