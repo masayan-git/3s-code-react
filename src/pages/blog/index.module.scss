@@ -1,8 +1,3 @@
-@use "@/styles/core/variables" as *;
-@use "@/styles/core/mixin" as *;
-@use "@/styles/core/functions" as *;
-@use "@/styles/utility/inner" as *;
-
 .container {
   display: grid;
   row-gap: 30px;
