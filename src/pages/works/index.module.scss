@@ -1,0 +1,27 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.container {
+  padding-top: rem-clamp(50, 100);
+  padding-bottom: rem-clamp(138, 260);
+}
+
+.inner {
+  @include u-inner;
+}
+
+.contents {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+
+  @include mq("max", "tablet") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.paginationArea {
+  margin-top: rem-clamp(30, 80);
+}

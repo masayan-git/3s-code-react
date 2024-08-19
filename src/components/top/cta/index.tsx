@@ -1,11 +1,16 @@
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { FC } from "react";
 
 import styles from "./index.module.scss";
 
-const Cta = () => {
+type Props = {
+  theme?: "light";
+};
+
+const Cta: FC<Props> = ({ theme }) => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} data-theme={theme}>
       <h2 className={styles.title}>CONTACT</h2>
       <div className={styles.contents}>
         <p className={styles.mainText}>
