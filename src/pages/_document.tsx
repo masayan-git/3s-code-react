@@ -1,7 +1,7 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
 const Document = () => {
-  const faviconPath = "favicon";
+  const faviconPath = "/favicon";
   return (
     <Html lang="ja">
       <Head>
