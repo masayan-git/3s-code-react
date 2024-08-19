@@ -1,0 +1,19 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.container {
+  @include u-inner;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 30px;
+  padding-top: rem-clamp(50, 80);
+  padding-bottom: 120px;
+
+  @include mq("max", "md") {
+    grid-template-columns: 1fr;
+    row-gap: 100px;
+  }
+}

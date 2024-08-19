@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="38" viewBox="0 0 38 38">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.853" y1="0.138" x2="0.141" y2="0.85" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#c50191"/>
+      <stop offset="1" stop-color="#fcb41d"/>
+    </linearGradient>
+  </defs>
+  <g id="surface1" transform="translate(1.453 1.879)">
+    <circle id="楕円形_29" data-name="楕円形 29" cx="19" cy="19" r="19" transform="translate(-1.453 -1.879)" fill="url(#linear-gradient)"/>
+    <path id="パス_39" data-name="パス 39" d="M13.3,7.121H21.7a5.758,5.758,0,0,1,5.758,5.758v9.246A5.759,5.759,0,0,1,21.7,27.887H13.3a5.759,5.759,0,0,1-5.758-5.762V12.879A5.758,5.758,0,0,1,13.3,7.121Zm0,0" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.641"/>
+    <path id="パス_40" data-name="パス 40" d="M22.574,17.5A5.074,5.074,0,1,1,17.5,12.426,5.071,5.071,0,0,1,22.574,17.5Zm0,0" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.641"/>
+    <path id="パス_41" data-name="パス 41" d="M24.3,10.8a.721.721,0,1,1-.723-.723A.72.72,0,0,1,24.3,10.8Zm0,0" fill="none" stroke="#fff" stroke-width="1.641"/>
+  </g>
+</svg>

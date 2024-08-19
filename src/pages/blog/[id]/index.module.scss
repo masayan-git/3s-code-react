@@ -1,0 +1,202 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+
+.inner {
+  border-radius: 40px;
+  box-shadow: 0 5px 25px #1b6c871a;
+  background-color: $white;
+  padding: 50px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: $bold;
+  line-height: 1.7;
+}
+
+.date {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: $bold;
+  text-align: right;
+}
+
+.eyeCatch {
+  margin-top: 10px;
+  aspect-ratio: 700 / 490;
+  background-color: $gray;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.content {
+  p {
+    margin-block: rem-clamp(20, 30);
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: rem-clamp(20, 22);
+    font-weight: $bold;
+    line-height: 2;
+    padding: rem-clamp(10, 15) rem-clamp(10, 15) rem-clamp(10, 18)
+      rem-clamp(45, 50);
+    position: relative;
+    border-radius: 50px 0 0 50px;
+    background-color: $secondary;
+    color: $white;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: $white;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      left: 14px;
+      border-radius: 50%;
+    }
+  }
+
+  h3 {
+    font-size: rem-clamp(18, 20);
+    font-weight: $bold;
+    line-height: 2;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-bottom: 3px dotted $secondary;
+    padding-bottom: 7px;
+  }
+
+  h4 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: rem-clamp(16, 18);
+    font-weight: $bold;
+    line-height: 2;
+  }
+
+  h5 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: rem-clamp(15, 16);
+    font-weight: $bold;
+    line-height: 2;
+  }
+
+  h6 {
+    font-size: rem-clamp(14, 15);
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: $bold;
+    line-height: 2;
+  }
+
+  a {
+    color: $primary;
+    display: inline-block;
+    text-decoration: underline;
+    line-height: 2;
+
+    @include link-hover-action-opacity;
+  }
+
+  strong {
+    font-weight: $bold;
+  }
+
+  img {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+  }
+
+  ol {
+    counter-reset: list-counter;
+    padding: rem-clamp(20, 25);
+    background-color: $secondary-light;
+    border-radius: 10px;
+    display: grid;
+    row-gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    li {
+      counter-increment: list-counter;
+      padding-left: 35px;
+      font-size: rem-clamp(14, 16);
+      line-height: 2;
+      position: relative;
+
+      ol {
+        margin: 0;
+      }
+
+      &::before {
+        content: counter(list-counter);
+        font-size: 12px;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+        width: 20px;
+        height: 20px;
+        background-color: $primary;
+        border-radius: 50%;
+        position: absolute;
+        left: 10px;
+        top: rem-clamp(13.25, 14.25);
+        transform: translate(-25%, -50%);
+      }
+    }
+  }
+
+  ul {
+    padding: rem-clamp(20, 25);
+    background-color: $secondary-light;
+    border-radius: 10px;
+    display: grid;
+    row-gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    li {
+      padding-left: rem-clamp(23, 27);
+      font-size: rem-clamp(14, 16);
+      line-height: 2;
+      font-weight: $regular;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $primary;
+        position: absolute;
+        left: 0;
+        top: rem-clamp(10, 12);
+      }
+    }
+  }
+}
+
+.buttonArea {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+}
