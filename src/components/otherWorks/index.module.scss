@@ -1,0 +1,29 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+
+.container {
+  margin-top: rem-clamp(80, 170);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: $bold;
+}
+
+.contents {
+  margin-top: rem-clamp(30, 60);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+
+  @include mq("max", "tablet") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.buttonArea {
+  margin-top: rem-clamp(30, 60);
+  display: flex;
+  justify-content: flex-end;
+}
