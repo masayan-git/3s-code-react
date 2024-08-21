@@ -1,0 +1,87 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+
+.container {
+  padding-top: rem-clamp(50, 80);
+  padding-bottom: rem-clamp(140, 260);
+}
+
+.inner {
+  @include u-inner;
+}
+
+.contents {
+  background-color: $white;
+  border-radius: 40px;
+  box-shadow: 0 5px 25px #1b6c871a;
+  padding: rem-clamp(30, 100);
+}
+
+.image {
+  aspect-ratio: 1000 / 650;
+  width: 100%;
+  overflow-y: scroll;
+
+  img {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.titleArea {
+  margin-top: rem-clamp(20, 50);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: $bold;
+}
+
+.link {
+  color: $primary;
+  font-size: 16px;
+  font-weight: $regular;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.content {
+  margin-top: rem-clamp(30, 60);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 60px;
+
+  @include mq("max", "md") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.infoContent {
+  grid-column: span 1;
+}
+
+.infoTitle {
+  font-size: 14px;
+  font-weight: $regular;
+  color: #666;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #707070;
+}
+
+.infoText {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.comment {
+  grid-column: span 2;
+
+  @include mq("max", "md") {
+    grid-column: unset;
+  }
+}

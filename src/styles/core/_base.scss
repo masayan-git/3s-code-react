@@ -22,6 +22,8 @@ input::placeholder {
 
 a {
   text-decoration: none;
+  word-break: break-word;
+  white-space: normal;
 }
 
 p {

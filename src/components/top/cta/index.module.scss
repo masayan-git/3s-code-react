@@ -9,6 +9,18 @@
   padding-top: rem-clamp(80, 160);
   padding-bottom: rem-clamp(80, 100);
   position: relative;
+
+  &[data-theme="light"] {
+    background: linear-gradient(180deg, $secondary-light, #f5fdff);
+
+    .mainText {
+      color: $black;
+    }
+
+    .subText {
+      color: $black;
+    }
+  }
 }
 
 .title {
