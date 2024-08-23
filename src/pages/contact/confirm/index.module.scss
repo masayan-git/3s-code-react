@@ -1,0 +1,35 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+@use "@/styles/utility/inner" as *;
+@use "@/styles/utility/button" as *;
+
+.container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.inner {
+  @include u-innerSmall;
+}
+
+.buttonArea {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+
+  @include mq("max", "tablet") {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+
+.submitButton {
+  @include u-submit-button;
+}
+
+.returnButton {
+  @include u-return-button;
+}
