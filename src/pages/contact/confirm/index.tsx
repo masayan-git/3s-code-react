@@ -14,6 +14,26 @@ const Confirm = () => {
   const formData = getValues();
   const router = useRouter();
 
+  const onSubmit = async () => {
+    const url = "/api/contact";
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        router.push("/contact/complete");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     // formData が空かどうかを確認し、空なら /contact にリダイレクト
     if (!formData || Object.keys(formData).length === 0) {
@@ -57,7 +77,11 @@ const Confirm = () => {
               <Link href="/contact" className={styles.returnButton}>
                 入力画面に戻る
               </Link>
-              <button type="submit" className={styles.submitButton}>
+              <button
+                type="button"
+                onClick={onSubmit}
+                className={styles.submitButton}
+              >
                 送信する
               </button>
             </div>

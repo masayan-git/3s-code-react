@@ -1,9 +1,17 @@
+import { useEffect } from "react";
+import { useFormContext } from "react-hook-form";
+
 import MoreButton from "@/components/button/moreButton";
 import ContactLayout from "@/layouts/contact";
 
 import styles from "./index.module.scss";
 
 const Complete = () => {
+  const { reset } = useFormContext();
+  useEffect(() => {
+    reset();
+  }, [reset]);
+
   return (
     <ContactLayout
       page={"お問い合わせ完了"}
