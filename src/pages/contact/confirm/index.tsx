@@ -26,14 +26,10 @@ const Confirm = () => {
       <div className={styles.container}>
         <div className={styles.inner}>
           <div className={styles.head}>
+            <p>以下の内容で送信します。</p>
             <p>
-              3S codeにご関心をお持ちいただきまして、ありがとうございます。
-              24時間以内に返答させていただきます。
+              内容をご確認いただき、よろしければ送信ボタンを押してください。
             </p>
-            <p>
-              お見積りやサービスに関するお問い合わせ、ご相談はこちらから承っております。
-            </p>
-            <p>24時間以内に返答させていただきます。</p>
           </div>
           <ContactForm>
             <ContactField

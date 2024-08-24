@@ -30,10 +30,7 @@ const Contact = () => {
       <div className={styles.container}>
         <div className={styles.inner}>
           <div className={styles.head}>
-            <p>
-              3S codeにご関心をお持ちいただきまして、ありがとうございます。
-              24時間以内に返答させていただきます。
-            </p>
+            <p>3S codeにご関心をお持ちいただきまして、ありがとうございます。</p>
             <p>
               お見積りやサービスに関するお問い合わせ、ご相談はこちらから承っております。
             </p>
