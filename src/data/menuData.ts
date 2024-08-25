@@ -9,7 +9,7 @@ export const menuData = [
   },
   {
     label: "制作実績",
-    href: "/",
+    href: "/works",
   },
   {
     label: "料金",
@@ -17,10 +17,10 @@ export const menuData = [
   },
   {
     label: "ブログ",
-    href: "/",
+    href: "/blog",
   },
   {
     label: "お問い合わせ",
-    href: "/",
+    href: "/contact",
   },
 ];
