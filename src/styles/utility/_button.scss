@@ -1,0 +1,32 @@
+@use "../core/functions" as *;
+@use "../core/variables" as *;
+@use "../core/mixin" as *;
+
+@mixin u-submit-button() {
+  display: inline-block;
+  font-size: 16px;
+  max-width: 240px;
+  font-weight: $regular;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  line-height: 1;
+  color: $white;
+  width: 100%;
+  background-color: $primary;
+  border-radius: 40px;
+  text-align: center;
+  letter-spacing: 0.07em;
+
+  @include button-hover-action-generic;
+
+  &[data-loading="true"] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+@mixin u-return-button() {
+  @include u-submit-button;
+
+  background-color: $secondary;
+}

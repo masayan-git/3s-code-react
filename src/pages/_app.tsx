@@ -1,15 +1,21 @@
 import "@/styles/globals.scss";
 
 import type { AppProps } from "next/app";
+import { FormProvider, useForm } from "react-hook-form";
 
 import { FontMontserrat, FontNotoSansJP, FontPoppins } from "@/fonts";
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
+  const methods = useForm();
   return (
     <div
       className={`app ${FontNotoSansJP.variable} ${FontMontserrat.variable} ${FontPoppins.variable} `}
     >
-      <Component {...pageProps} />
+      <FormProvider {...methods}>
+        <Component {...pageProps} />
+      </FormProvider>
     </div>
   );
-}
+};
+
+export default App;

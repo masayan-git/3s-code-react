@@ -1,0 +1,54 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+
+.container {
+  display: grid;
+  row-gap: 10px;
+}
+
+.labelArea {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: $regular;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.required {
+  font-size: 12px;
+  line-height: 1;
+  color: $white;
+  background-color: $secondary;
+  border-radius: 10px;
+  padding: 4px 6px;
+}
+
+.confirmText {
+  font-size: 16px;
+  color: #666;
+  line-height: 2;
+}
+
+.input,
+.textarea {
+  font-size: 14px;
+  font-weight: $regular;
+  padding: 15px;
+  line-height: 1.7;
+  background-color: #f7f6f6;
+  display: block;
+  width: 100%;
+}
+
+.error {
+  font-size: 14px;
+  font-weight: $regular;
+  color: #fa5252;
+}

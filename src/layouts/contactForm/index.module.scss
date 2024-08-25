@@ -1,0 +1,15 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/functions" as *;
+
+.container {
+  background-color: $white;
+  border-radius: 40px;
+  box-shadow: 0 5px 25px #1b6c871a;
+  margin-top: rem-clamp(40, 50);
+}
+
+.inner {
+  padding: rem-clamp(30, 50);
+  display: grid;
+  row-gap: 30px;
+}

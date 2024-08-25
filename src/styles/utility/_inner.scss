@@ -9,3 +9,7 @@
 @mixin u-innerMedium {
   @include inner-style(1000px);
 }
+
+@mixin u-innerSmall {
+  @include inner-style(820px);
+}
