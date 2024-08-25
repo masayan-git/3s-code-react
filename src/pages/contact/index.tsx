@@ -10,8 +10,6 @@ import styles from "./index.module.scss";
 
 const Contact = () => {
   const router = useRouter();
-  const { getValues } = useFormContext();
-  const formData = getValues();
   const {
     register,
     handleSubmit,
@@ -22,9 +20,6 @@ const Contact = () => {
     router.push("/contact/confirm");
   };
 
-  useEffect(() => {
-    console.log(formData.company);
-  }, [formData]);
   return (
     <ContactLayout page="お問い合わせ" description="お問い合わせページです。">
       <div className={styles.container}>
@@ -103,8 +98,8 @@ const Contact = () => {
                 options={{
                   required: "必須項目です",
                   pattern: {
-                    value: /^0\d{9,10}$/,
-                    message: "ハイフンなしの数字(半角)で入力してください",
+                    value: /^\d{2,4}-?\d{2,4}-?\d{3,4}$/,
+                    message: "電話番号の形式(半角数字)で入力してください",
                   },
                   maxLength: {
                     value: 50,
