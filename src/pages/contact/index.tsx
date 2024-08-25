@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 
 import ContactField from "@/components/contact/contactField";
