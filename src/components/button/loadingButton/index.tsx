@@ -22,7 +22,7 @@ const LoadingButton: FC<LoadingButtonProps> = ({
       onClick={onClick}
     >
       {isLoading ? (
-        <span className={styles.loadingCircle}>送信中...</span>
+        <span className={styles.loadingCircle}></span>
       ) : (
         <span className={styles.text}>{text}</span>
       )}

@@ -31,7 +31,9 @@ const Confirm = () => {
 
       if (response.ok) {
         router.push("/contact/complete");
+        setIsLoading(false);
       } else {
+        setIsLoading(false);
         throw new Error("サーバーエラーが発生しました。", {
           cause: {
             status: response.status,
@@ -76,7 +78,6 @@ const Confirm = () => {
           }
         }
       }
-    } finally {
       setIsLoading(false);
     }
   };
