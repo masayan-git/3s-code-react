@@ -1,0 +1,5 @@
+@use "@/styles/utility/button" as *;
+
+.container {
+  @include u-submit-button;
+}

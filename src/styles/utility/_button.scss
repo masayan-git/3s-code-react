@@ -19,8 +19,9 @@
 
   @include button-hover-action-generic;
 
-  &:focus {
-    outline: 5px solid $primary;
+  &[data-loading="true"] {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 }
 

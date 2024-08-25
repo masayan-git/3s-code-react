@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 
 import ContactField from "@/components/contact/contactField";
@@ -8,13 +8,16 @@ import ContactLayout from "@/layouts/contact";
 import ContactForm from "@/layouts/contactForm";
 
 import styles from "./index.module.scss";
+import LoadingButton from "@/components/button/loadingButton";
 
 const Confirm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const { getValues } = useFormContext();
   const formData = getValues();
   const router = useRouter();
 
   const onSubmit = async () => {
+    setIsLoading(true);
     const url = "/api/contact";
 
     try {
@@ -28,9 +31,53 @@ const Confirm = () => {
 
       if (response.ok) {
         router.push("/contact/complete");
+      } else {
+        throw new Error("サーバーエラーが発生しました。", {
+          cause: {
+            status: response.status,
+            statusText: response.statusText,
+          },
+        });
       }
     } catch (error) {
-      console.error(error);
+      if (error instanceof Error) {
+        if (
+          error.cause &&
+          typeof error.cause === "object" &&
+          "status" in error.cause &&
+          "statusText" in error.cause
+        ) {
+          switch (error.cause.status) {
+            case 404:
+              alert(
+                `
+                ${error.cause.status}: ${error.cause.statusText}
+                リクエストされたリソースが見つかりません。
+              `.replace(/^\s+/gm, "")
+              );
+              break;
+            case 500:
+              alert(
+                `
+                ${error.cause.status}: ${error.cause.statusText}
+                サーバーエラーが発生しました。
+                再度お試しいただくか、しばらく時間をおいてからお試しください。
+              `.replace(/^\s+/gm, "")
+              );
+              break;
+            default:
+              alert(
+                `
+                ネットワークエラーが発生しました。
+                再度お試しいただくか、しばらく時間をおいてからお試しください。
+              `.replace(/^\s+/gm, "")
+              );
+              break;
+          }
+        }
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -74,16 +121,18 @@ const Confirm = () => {
               value={formData.content}
             />
             <div className={styles.buttonArea}>
-              <Link href="/contact" className={styles.returnButton}>
+              <Link
+                href="/contact"
+                data-loading={isLoading}
+                className={styles.returnButton}
+              >
                 入力画面に戻る
               </Link>
-              <button
-                type="button"
+              <LoadingButton
                 onClick={onSubmit}
-                className={styles.submitButton}
-              >
-                送信する
-              </button>
+                isLoading={isLoading}
+                text="送信する"
+              />
             </div>
           </ContactForm>
         </div>
