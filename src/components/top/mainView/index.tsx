@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { FC } from "react";
 
-import styles from "@/components/top/mainView/index.module.scss";
+import styles from "./index.module.scss";
 
 const MainView: FC = () => {
   return (
