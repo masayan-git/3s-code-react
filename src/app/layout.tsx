@@ -6,7 +6,10 @@ import Header from "@/components/header";
 import { FontMontserrat, FontNotoSansJP, FontPoppins } from "@/fonts";
 
 export const metadata = {
-  title: "3S code - 大阪のWeb制作フリーランス",
+  title: {
+    template: "%s | 3S code",
+    default: "3S code",
+  },
   description: "あなたの想いをWebに表現します。",
   icons: {
     icon: "/favicon/favicon-32x32.png",
