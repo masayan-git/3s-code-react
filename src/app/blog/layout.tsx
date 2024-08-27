@@ -5,6 +5,7 @@ import type { LayoutProps } from "@/types";
 
 export const metadata: Metadata = {
   title: "ブログ",
+  description: "ブログ記事一覧です。",
 };
 
 const BlogLayout = ({ children }: LayoutProps) => {
