@@ -7,11 +7,11 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: $base-font-family;
+  font-weight: $regular;
 }
 
 .app {
-  font-family: $base-font-family;
-  font-weight: $regular;
   background-color: $white;
   font-display: swap;
 }
