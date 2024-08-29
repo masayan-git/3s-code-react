@@ -1,14 +1,15 @@
+"use client";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 
+import LoadingButton from "@/components/button/loadingButton";
 import ContactField from "@/components/contact/contactField";
-import ContactLayout from "@/layouts/contact";
 import ContactForm from "@/layouts/contactForm";
 
 import styles from "./index.module.scss";
-import LoadingButton from "@/components/button/loadingButton";
 
 const Confirm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -90,55 +91,47 @@ const Confirm = () => {
   }, [formData, router]);
 
   return (
-    <ContactLayout page="お問い合わせ" description="お問い合わせページです。">
-      <div className={styles.container}>
-        <div className={styles.inner}>
-          <div className={styles.head}>
-            <p>以下の内容で送信します。</p>
-            <p>
-              内容をご確認いただき、よろしければ送信ボタンを押してください。
-            </p>
-          </div>
-          <ContactForm>
-            <ContactField
-              label="会社名"
-              name="company"
-              value={formData.company}
-            />
-            <ContactField
-              label="ご担当者名"
-              name="name"
-              value={formData.name}
-            />
-            <ContactField
-              label="メールアドレス"
-              name="email"
-              value={formData.email}
-            />
-            <ContactField label="電話番号" name="tel" value={formData.tel} />
-            <ContactField
-              label="ご相談内容"
-              name="content"
-              value={formData.content}
-            />
-            <div className={styles.buttonArea}>
-              <Link
-                href="/contact"
-                data-loading={isLoading}
-                className={styles.returnButton}
-              >
-                入力画面に戻る
-              </Link>
-              <LoadingButton
-                onClick={onSubmit}
-                isLoading={isLoading}
-                text="送信する"
-              />
-            </div>
-          </ContactForm>
+    <div className={styles.container}>
+      <div className={styles.inner}>
+        <div className={styles.head}>
+          <p>以下の内容で送信します。</p>
+          <p>内容をご確認いただき、よろしければ送信ボタンを押してください。</p>
         </div>
+        <ContactForm>
+          <ContactField
+            label="会社名"
+            name="company"
+            value={formData.company}
+          />
+          <ContactField label="ご担当者名" name="name" value={formData.name} />
+          <ContactField
+            label="メールアドレス"
+            name="email"
+            value={formData.email}
+          />
+          <ContactField label="電話番号" name="tel" value={formData.tel} />
+          <ContactField
+            label="ご相談内容"
+            name="content"
+            value={formData.content}
+          />
+          <div className={styles.buttonArea}>
+            <Link
+              href="/contact"
+              data-loading={isLoading}
+              className={styles.returnButton}
+            >
+              入力画面に戻る
+            </Link>
+            <LoadingButton
+              onClick={onSubmit}
+              isLoading={isLoading}
+              text="送信する"
+            />
+          </div>
+        </ContactForm>
       </div>
-    </ContactLayout>
+    </div>
   );
 };
 
