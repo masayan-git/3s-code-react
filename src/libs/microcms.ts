@@ -1,4 +1,5 @@
 import type {
+  MicroCMSContentId,
   MicroCMSImage,
   MicroCMSListContent,
   MicroCMSQueries,
@@ -16,6 +17,20 @@ export type Blog = {
   category: Category;
   eyecatch: MicroCMSImage;
 } & MicroCMSListContent;
+
+export type Works = {
+  eyecatch: MicroCMSImage;
+  screenshot: MicroCMSImage;
+  title: string;
+  url: string;
+  industry: string;
+  service: string;
+  kinds: string;
+  period: string;
+  comment: string;
+  related: MicroCMSContentId[];
+} & MicroCMSListContent;
+
 import { createClient } from "microcms-js-sdk";
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -68,4 +83,12 @@ export const getCategoryDetail = async (
     queries,
   });
   return detailData;
+};
+
+export const getWorksList = async (queries?: MicroCMSQueries) => {
+  const worksData = await client.getList<Works>({
+    endpoint: "works",
+    queries,
+  });
+  return worksData;
 };
