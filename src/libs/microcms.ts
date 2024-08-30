@@ -50,3 +50,22 @@ export const getBlogDetail = async (
   });
   return detailData;
 };
+
+export const getAllCategory = async () => {
+  const categoryData = await client.getAllContents<Category>({
+    endpoint: "categories",
+  });
+  return categoryData;
+};
+
+export const getCategoryDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  const detailData = await client.getListDetail<Category>({
+    endpoint: "categories",
+    contentId,
+    queries,
+  });
+  return detailData;
+};
