@@ -1,5 +1,6 @@
 import "@/styles/globals.scss";
 
+import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 
 import Footer from "@/components/footer";
@@ -42,6 +43,7 @@ export default function RootLayout({
           <Footer />
         </FormClient>
       </body>
+      <GoogleTagManager gtmId="GTM-THBZ5L55" />
     </html>
   );
 }

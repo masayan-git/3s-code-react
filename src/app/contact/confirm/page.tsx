@@ -1,5 +1,6 @@
 "use client";
 
+import { sendGTMEvent } from "@next/third-parties/google";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -17,6 +18,10 @@ const Confirm = () => {
   const formData = getValues();
   const router = useRouter();
 
+  const handleGTMEvent = () => {
+    sendGTMEvent({ event: "contact", value: "submit" });
+  };
+
   const onSubmit = async () => {
     setIsLoading(true);
     const url = "/api/contact";
@@ -31,6 +36,7 @@ const Confirm = () => {
       });
 
       if (response.ok) {
+        handleGTMEvent();
         router.push("/contact/complete");
         setIsLoading(false);
       } else {
