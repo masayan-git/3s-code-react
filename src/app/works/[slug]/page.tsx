@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+
 import OtherWorks from "@/components/otherWorks";
+import { getWorksDetail } from "@/libs/microcms";
 
 import styles from "./index.module.scss";
-import { getWorksDetail } from "@/libs/microcms";
-import { notFound } from "next/navigation";
 
 type Props = {
   params: {

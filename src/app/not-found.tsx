@@ -1,6 +1,7 @@
 import MoreButton from "@/components/button/moreButton";
-import styles from "./not-found.module.scss";
 import PageTitle from "@/components/pageTitle";
+
+import styles from "./not-found.module.scss";
 
 const notFound = () => {
   return (

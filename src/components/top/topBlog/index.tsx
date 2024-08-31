@@ -1,12 +1,12 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import MoreButton from "@/components/button/moreButton";
 import CategoryLabel from "@/components/label/categoryLabel";
+import { getBlogList } from "@/libs/microcms";
 
 import SectionTitle from "../sectionTitle";
 import styles from "./index.module.scss";
-import { getBlogList } from "@/libs/microcms";
 
 const TopBlog = async () => {
   const data = await getBlogList({

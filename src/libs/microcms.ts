@@ -1,5 +1,4 @@
 import type {
-  MicroCMSContentId,
   MicroCMSImage,
   MicroCMSListContent,
   MicroCMSQueries,

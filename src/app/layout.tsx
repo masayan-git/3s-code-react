@@ -1,10 +1,11 @@
 import "@/styles/globals.scss";
 
+import type { Metadata } from "next";
+
 import Footer from "@/components/footer";
 import FormClient from "@/components/form/formClient";
 import Header from "@/components/header";
 import { FontMontserrat, FontNotoSansJP, FontPoppins } from "@/fonts";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://3s-code.com/"),

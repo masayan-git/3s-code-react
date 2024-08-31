@@ -1,11 +1,11 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 import CategoryLabel from "@/components/label/categoryLabel";
 import { getBlogDetail } from "@/libs/microcms";
 import { formatDate } from "@/libs/utils";
 
 import styles from "./index.module.scss";
-import { notFound } from "next/navigation";
 
 type Props = {
   params: {

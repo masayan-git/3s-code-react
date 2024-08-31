@@ -1,4 +1,5 @@
-import { Works } from "@/libs/microcms";
+import type { Works } from "@/libs/microcms";
+
 import MoreButton from "../button/moreButton";
 import WorksCard from "../worksCard";
 import styles from "./index.module.scss";

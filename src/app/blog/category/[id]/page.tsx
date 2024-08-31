@@ -1,8 +1,9 @@
+import { notFound } from "next/navigation";
+
 import BlogCard from "@/components/blog/blogCard";
 import { getBlogList, getCategoryDetail } from "@/libs/microcms";
 
 import styles from "./index.module.scss";
-import { notFound } from "next/navigation";
 
 type Props = {
   params: {

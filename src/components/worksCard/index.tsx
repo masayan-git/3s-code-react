@@ -1,8 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
+import type { Works } from "@/libs/microcms";
 
 import styles from "./index.module.scss";
-import { Works } from "@/libs/microcms";
 
 type Props = {
   data: Works;

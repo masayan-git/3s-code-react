@@ -1,9 +1,9 @@
 import MoreButton from "@/components/button/moreButton";
 import WorksCard from "@/components/worksCard";
+import { getWorksList } from "@/libs/microcms";
 
 import SectionTitle from "../sectionTitle";
 import styles from "./index.module.scss";
-import { getWorksList } from "@/libs/microcms";
 
 const TopWorks = async () => {
   const data = await getWorksList({
