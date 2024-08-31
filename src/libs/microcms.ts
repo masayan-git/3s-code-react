@@ -104,3 +104,17 @@ export const getWorksDetail = async (
   });
   return detailData;
 };
+
+export const getAllBlogList = async () => {
+  const listData = await client.getAllContents<Blog>({
+    endpoint: "blog",
+  });
+  return listData;
+};
+
+export const getAllWorksList = async () => {
+  const listData = await client.getAllContents<Works>({
+    endpoint: "works",
+  });
+  return listData;
+};
