@@ -32,9 +32,10 @@ const MainView: FC = () => {
             <div className={styles.image}>
               <Image
                 src={"/top/mv/mv-object.webp"}
-                width={500}
-                height={532}
+                width={300}
+                height={320}
                 alt=""
+                priority
               />
             </div>
           </div>
