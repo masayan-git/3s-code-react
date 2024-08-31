@@ -5,6 +5,7 @@ import styles from "./index.module.scss";
 
 const Works = async () => {
   const data = await getWorksList();
+  if (!data) return null;
   return (
     <div className={styles.container}>
       <div className={styles.inner}>

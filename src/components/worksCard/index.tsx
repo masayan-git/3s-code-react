@@ -9,6 +9,7 @@ type Props = {
 };
 
 const WorksCard = ({ data }: Props) => {
+  if (!data) return null;
   return (
     <article className={styles.container}>
       <Link href={`/works/${data.id}`} className={styles.link}>

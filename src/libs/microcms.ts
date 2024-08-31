@@ -28,7 +28,8 @@ export type Works = {
   kinds: string;
   period: string;
   comment: string;
-  related: MicroCMSContentId[];
+  related: Works[];
+  seoDescription: string;
 } & MicroCMSListContent;
 
 import { createClient } from "microcms-js-sdk";
@@ -91,4 +92,16 @@ export const getWorksList = async (queries?: MicroCMSQueries) => {
     queries,
   });
   return worksData;
+};
+
+export const getWorksDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  const detailData = await client.getListDetail<Works>({
+    endpoint: "works",
+    contentId,
+    queries,
+  });
+  return detailData;
 };
