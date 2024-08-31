@@ -1,40 +1,40 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import MoreButton from "@/components/button/moreButton";
 import CategoryLabel from "@/components/label/categoryLabel";
+import { getBlogList } from "@/libs/microcms";
 
 import SectionTitle from "../sectionTitle";
 import styles from "./index.module.scss";
 
-const TopBlog = () => {
+const TopBlog = async () => {
+  const data = await getBlogList({
+    limit: 3,
+  });
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
         <SectionTitle titleEn="BLOG" titleJa="ブログ" />
         <div className={styles.cards}>
-          {Array.from({ length: 3 }).map((_, index) => (
-            <article key={index} className={styles.card}>
-              <Link href="/" className={styles.cardLink}>
+          {data.contents.map((blog) => (
+            <article key={blog.id} className={styles.card}>
+              <Link href={`/blog/${blog.id}`} className={styles.cardLink}>
                 <div className={styles.cardImage}>
-                  <img
-                    src="https://via.placeholder.com/300"
+                  <Image
+                    src={blog.eyecatch.url}
                     width={370}
                     height={260}
-                    alt="記事タイトル"
+                    alt={blog.title}
                   />
                 </div>
                 <div className={styles.cardContent}>
-                  <h1 className={styles.cardTitle}>
-                    SEOライティングに必要な構成の作り方!基本8ステップとは？
-                  </h1>
+                  <h1 className={styles.cardTitle}>{blog.title}</h1>
                   <div className={styles.cardCategory}>
-                    <CategoryLabel category="SEOライティング" />
+                    <CategoryLabel category={blog.category.name} />
                   </div>
                   <p className={styles.cardText}>
-                    構成とは、SEO記事の骨組みになる部分を
-                    指します。SEOライティングでは、記事の本
-                    文を執筆する前に構成（構成案）を作成し
-                    ます。ライティングを始める前に、構成を作成しておくことで、記事の方向性が明確になり、効率的に記事を執筆することができます。
+                    {blog.content.replace(/<\/?[^>]+(>|$)/g, "")}
                   </p>
                 </div>
               </Link>
@@ -42,7 +42,7 @@ const TopBlog = () => {
           ))}
         </div>
         <div className={styles.moreButton}>
-          <MoreButton href="/" text="記事一覧を見る" />
+          <MoreButton href="/blog/" text="記事一覧を見る" />
         </div>
       </div>
     </div>

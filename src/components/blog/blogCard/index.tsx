@@ -1,25 +1,34 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import CategoryLabel from "@/components/label/categoryLabel";
+import type { Blog } from "@/libs/microcms";
 
 import styles from "./index.module.scss";
 
-const BlogCard = () => {
+type Props = {
+  blog: Blog;
+};
+
+const BlogCard = ({ blog }: Props) => {
   return (
     <article className={styles.container}>
-      <Link href="/blog/1" className={styles.link}>
+      <Link href={`/blog/${blog.id}`} className={styles.link}>
         <div className={styles.image}>
-          <img src="https://via.placeholder.com/300" alt="" />
+          <Image
+            src={blog.eyecatch.url}
+            alt=""
+            width={blog.eyecatch.width}
+            height={blog.eyecatch.height}
+          />
         </div>
         <div className={styles.contents}>
-          <h1 className={styles.title}>
-            SEOライティングに必要な構成の作り方！基本8ステップとは？
-          </h1>
+          <h1 className={styles.title}>{blog.title}</h1>
           <div className={styles.categories}>
-            <CategoryLabel category="Web制作" />
+            <CategoryLabel category={blog.category.name} />
           </div>
           <p className={styles.description}>
-            SEOライティングに必要な構成の作り方！基本8ステップとは？SEOライティングに必要な構成の作り方！基本8ステップとは？
+            {blog.content.replace(/<\/?[^>]+(>|$)/g, "")}
           </p>
         </div>
       </Link>

@@ -1,22 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
+
+import type { Works } from "@/libs/microcms";
 
 import styles from "./index.module.scss";
 
-const WorksCard = () => {
+type Props = {
+  data: Works;
+};
+
+const WorksCard = ({ data }: Props) => {
+  if (!data) return null;
   return (
     <article className={styles.container}>
-      <Link href="/works/1" className={styles.link}>
+      <Link href={`/works/${data.id}`} className={styles.link}>
         <div className={styles.image}>
-          <img
-            src="https://via.placeholder.com/300"
+          <Image
+            src={data.eyecatch.url}
             width={300}
             height={300}
-            alt="サイトタイトル"
+            alt={data.title}
           />
         </div>
         <div className={styles.titleArea}>
-          <h1 className={styles.title}>タイトルです</h1>
-          <p className={styles.urlText}>https://via.placeholder.com/300</p>
+          <h1 className={styles.title}>{data.title}</h1>
+          {data.url && <p className={styles.urlText}>{data.url}</p>}
         </div>
       </Link>
     </article>

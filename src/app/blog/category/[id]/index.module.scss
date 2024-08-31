@@ -1,0 +1,20 @@
+@use "@/styles/core/variables" as *;
+
+.container {
+  display: grid;
+  row-gap: 30px;
+}
+
+.category {
+  display: block;
+  font-size: 14px;
+  font-weight: $bold;
+  color: $primary;
+}
+
+.categoryName {
+  margin-top: 6px;
+  display: block;
+  font-size: 24px;
+  font-weight: $bold;
+}

@@ -1,30 +1,26 @@
 import Link from "next/link";
 
+import { getAllCategory } from "@/libs/microcms";
+
 import styles from "./index.module.scss";
 
-const CategoryCard = () => {
+const CategoryCard = async () => {
+  const categories = await getAllCategory();
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>カテゴリー</h2>
       <ul className={styles.categories}>
-        <li className={styles.category}>
-          <Link href={"/"} className={styles.link}>
-            <span></span>
-            Web制作
-          </Link>
-        </li>
-        <li className={styles.category}>
-          <Link href={"/"} className={styles.link}>
-            <span></span>
-            WordPress
-          </Link>
-        </li>
-        <li className={styles.category}>
-          <Link href={"/"} className={styles.link}>
-            <span></span>
-            お知らせ
-          </Link>
-        </li>
+        {categories.map((category) => (
+          <li key={category.id} className={styles.category}>
+            <Link
+              href={`/blog/category/${category.id}`}
+              className={styles.link}
+            >
+              <span></span>
+              {category.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </section>
   );

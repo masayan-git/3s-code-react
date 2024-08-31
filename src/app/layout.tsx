@@ -1,28 +1,23 @@
 import "@/styles/globals.scss";
 
+import type { Metadata } from "next";
+
 import Footer from "@/components/footer";
 import FormClient from "@/components/form/formClient";
 import Header from "@/components/header";
 import { FontMontserrat, FontNotoSansJP, FontPoppins } from "@/fonts";
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL("https://3s-code.com/"),
   title: {
     template: "%s | 3S code",
     default: "3S code",
   },
   description: "あなたの想いをWebに表現します。",
-  icons: {
-    icon: "/favicon/favicon-32x32.png",
-    apple: "/favicon/apple-touch-icon.png",
-    other: [
-      {
-        rel: "icon",
-        type: "image/png",
-        sizes: "16x16",
-        url: "/favicon/favicon-16x16.png",
-      },
-      { rel: "manifest", url: "/favicon/site.webmanifest" },
-    ],
+  openGraph: {
+    title: "3S code",
+    description: "あなたの想いをWebに表現します。",
+    images: ["/favicon/android-chrome-512x512.png"],
   },
 };
 
