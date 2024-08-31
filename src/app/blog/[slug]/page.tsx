@@ -5,6 +5,7 @@ import { getBlogDetail } from "@/libs/microcms";
 import { formatDate } from "@/libs/utils";
 
 import styles from "./index.module.scss";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: {
@@ -13,7 +14,7 @@ type Props = {
 };
 
 const BlogShow = async ({ params }: Props) => {
-  const data = await getBlogDetail(params.slug);
+  const data = await getBlogDetail(params.slug).catch(notFound);
 
   if (!data) return <p>記事がありません</p>;
 

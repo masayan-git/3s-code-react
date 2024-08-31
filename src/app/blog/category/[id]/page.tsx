@@ -2,6 +2,7 @@ import BlogCard from "@/components/blog/blogCard";
 import { getBlogList, getCategoryDetail } from "@/libs/microcms";
 
 import styles from "./index.module.scss";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: {
@@ -10,9 +11,9 @@ type Props = {
 };
 
 const CategoryArchive = async ({ params }: Props) => {
-  const category = await getCategoryDetail(params.id);
+  const category = await getCategoryDetail(params.id).catch(notFound);
   const { contents: article, totalCount } = await getBlogList({
-    filters: `category[equals]${params.id}`,
+    filters: `category[equals]${category.id}`,
     limit: 10,
   });
   if (!article) return <p>記事がありません</p>;
