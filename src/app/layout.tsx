@@ -36,6 +36,7 @@ export default function RootLayout({
       lang="ja"
       className={`${FontNotoSansJP.variable} ${FontMontserrat.variable} ${FontPoppins.variable}`}
     >
+      <GoogleTagManager gtmId="GTM-THBZ5L55" />
       <body>
         <FormClient>
           <Header />
@@ -43,7 +44,6 @@ export default function RootLayout({
           <Footer />
         </FormClient>
       </body>
-      <GoogleTagManager gtmId="GTM-THBZ5L55" />
     </html>
   );
 }
