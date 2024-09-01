@@ -3,6 +3,8 @@ import { getBlogList } from "@/libs/microcms";
 
 import styles from "./index.module.scss";
 
+export const revalidate = 1;
+
 const Blog = async () => {
   const { contents: article, totalCount } = await getBlogList({
     limit: 10,

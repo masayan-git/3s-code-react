@@ -13,6 +13,8 @@ type Props = {
   };
 };
 
+export const revalidate = 1;
+
 const BlogShow = async ({ params }: Props) => {
   const data = await getBlogDetail(params.slug).catch(notFound);
 
@@ -50,7 +52,6 @@ const BlogShow = async ({ params }: Props) => {
         <ReturnButton href="/" text="前の記事" />
         <MoreButton href="/" text="次の記事" />
       </div> */}
-
     </div>
   );
 };

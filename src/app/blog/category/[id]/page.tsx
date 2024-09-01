@@ -11,6 +11,8 @@ type Props = {
   };
 };
 
+export const revalidate = 1;
+
 const CategoryArchive = async ({ params }: Props) => {
   const category = await getCategoryDetail(params.id).catch(notFound);
   const { contents: article, totalCount } = await getBlogList({
