@@ -31,10 +31,11 @@ const MainView: FC = () => {
           <div className={styles.imageContainer}>
             <div className={styles.image}>
               <Image
-                src={"/top/mv/mv-object.webp"}
-                width={300}
-                height={320}
+                src={"/top/mv/mv-object-sp.webp"}
+                width={500}
+                height={530}
                 alt=""
+                sizes="(max-width: 768px) 300px, 500px"
                 priority
               />
             </div>
