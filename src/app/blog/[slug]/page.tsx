@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -11,21 +12,47 @@ type Props = {
   params: {
     slug: string;
   };
+  searchParams: {
+    dk?: string;
+  };
 };
 
 export const revalidate = 1;
 
-const BlogShow = async ({ params }: Props) => {
-  const data = await getBlogDetail(params.slug).catch(notFound);
+export const generateMetadata = async ({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> => {
+  const data = await getBlogDetail(params.slug, {
+    draftKey: searchParams.dk,
+  });
+
+  return {
+    title: `${data.title} | 3S code`,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: [data?.eyecatch?.url || "/favicon/android-chrome-512x512.png"],
+    },
+  };
+};
+
+const BlogShow = async ({ params, searchParams }: Props) => {
+  const data = await getBlogDetail(params.slug, {
+    draftKey: searchParams.dk,
+  }).catch(notFound);
 
   if (!data) return <p>記事がありません</p>;
 
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
-        <div className={styles.categories}>
-          <CategoryLabel category={data.category.name} />
-        </div>
+        {data.category && (
+          <div className={styles.categories}>
+            <CategoryLabel category={data.category.name} />
+          </div>
+        )}
         <h1 className={styles.title}>{data.title}</h1>
         <div className={styles.date}>
           {data.updatedAt
