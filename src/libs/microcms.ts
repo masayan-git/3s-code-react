@@ -101,6 +101,11 @@ export const getWorksDetail = async (
     endpoint: "works",
     contentId,
     queries,
+    customRequestInit: {
+      next: {
+        revalidate: queries?.draftKey === undefined ? 60 : 0,
+      },
+    },
   });
   return detailData;
 };

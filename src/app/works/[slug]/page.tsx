@@ -18,8 +18,11 @@ type Props = {
 
 export const generateMetadata = async ({
   params,
+  searchParams,
 }: Props): Promise<Metadata> => {
-  const data = await getWorksDetail(params.slug).catch(notFound);
+  const data = await getWorksDetail(params.slug, {
+    draftKey: searchParams.dk,
+  });
 
   return {
     title: `${data.title} | 3S code`,
@@ -32,8 +35,10 @@ export const generateMetadata = async ({
   };
 };
 
-const WorksShow = async ({ params }: Props) => {
-  const data = await getWorksDetail(params.slug);
+const WorksShow = async ({ params, searchParams }: Props) => {
+  const data = await getWorksDetail(params.slug, {
+    draftKey: searchParams.dk,
+  }).catch(notFound);
   if (!data) return null;
 
   return (
