@@ -16,7 +16,11 @@ const Header: FC = () => {
 
   return (
     <header data-active={active || undefined} className={styles.container}>
-      <button onClick={handleMenuOpen} className={styles.button}>
+      <button
+        onClick={handleMenuOpen}
+        className={styles.button}
+        aria-label="toggleMenu"
+      >
         <span className={styles.buttonLine}></span>
         <span className={styles.buttonLine}></span>
         <span className={styles.buttonLine}></span>

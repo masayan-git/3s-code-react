@@ -33,8 +33,8 @@ const TopAbout = () => {
               <div className={styles.massageImage}>
                 <Image
                   src="/top/about/about-1.webp"
-                  width={720}
-                  height={510}
+                  width={360}
+                  height={230}
                   alt=""
                 />
               </div>
@@ -76,8 +76,8 @@ const TopAbout = () => {
               <div className={styles.promiseImage}>
                 <Image
                   src={"/top/about/about-2.webp"}
-                  width={440}
-                  height={506}
+                  width={360}
+                  height={230}
                   alt=""
                 />
               </div>
