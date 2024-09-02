@@ -1,11 +1,11 @@
 export const menuData = [
   {
     label: "3S codeについて",
-    href: "/",
+    href: "/#about",
   },
   {
     label: "サービス",
-    href: "/",
+    href: "/#service",
   },
   {
     label: "制作実績",
@@ -13,7 +13,7 @@ export const menuData = [
   },
   {
     label: "料金",
-    href: "/",
+    href: "/#price",
   },
   {
     label: "ブログ",

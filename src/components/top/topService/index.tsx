@@ -26,7 +26,7 @@ const TopService = () => {
     },
   ];
   return (
-    <div className={styles.container}>
+    <div id="service" className={styles.container}>
       <div className={styles.inner}>
         <SectionTitle titleEn="SERVICE" titleJa="サービス" theme="light" />
         <div className={styles.cards}>

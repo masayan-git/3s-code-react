@@ -25,7 +25,7 @@ const TopPrice = () => {
     },
   ];
   return (
-    <div className={styles.container}>
+    <div id="price" className={styles.container}>
       <div className={styles.bgInner}>
         <div className={styles.inner}>
           <SectionTitle titleEn="PRICE" titleJa="料金" theme="light" />
