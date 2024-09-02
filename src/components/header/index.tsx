@@ -36,6 +36,7 @@ const Header: FC = () => {
             {menuData.map((item, index) => (
               <li key={index}>
                 <Link
+                  onClick={() => setActive(false)}
                   href={item.href}
                   className={styles.navLink}
                   data-contact-button={
