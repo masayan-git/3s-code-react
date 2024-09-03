@@ -1,0 +1,44 @@
+@use "@/styles/core/variables" as *;
+@use "@/styles/core/mixin" as *;
+@use "@/styles/core/functions" as *;
+
+.container {
+  margin-top: 20px;
+}
+
+.lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.link {
+  font-size: 16px;
+  font-weight: $bold;
+  aspect-ratio: 1 / 1;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: $primary;
+  border: 1px solid $primary;
+  background-color: $white;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &[data-current] {
+    pointer-events: none;
+    background-color: $primary;
+    color: $white;
+  }
+}
