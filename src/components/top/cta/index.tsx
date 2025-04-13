@@ -22,10 +22,10 @@ const Cta: FC<Props> = ({ theme }) => {
           <span>24時間以内に返答させていただきます。</span>
         </p>
         <div className={styles.buttonArea}>
-          <button className={styles.button}>
+          <a href={"/contact"} className={styles.button}>
             <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
             お問い合わせする
-          </button>
+          </a>
         </div>
       </div>
     </section>
