@@ -3,6 +3,8 @@ import { getWorksList } from "@/libs/microcms";
 
 import styles from "./index.module.scss";
 
+export const revalidate = 60;
+
 const Works = async () => {
   const data = await getWorksList();
   if (!data) return null;
